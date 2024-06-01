@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 12 - VIP</title>
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+        }
+
+        .textbar {
+            height: 45px;
+            width: 100%;
+            background-color: rgb(244, 244, 250);
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .image1 {
+            height: 120px;
+            width: 120px;
+            margin-left: 590px;
+            margin-top: 250px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .image2 {
+            height: 32px;
+            width: 32px;
+            left: 635px; /* Change this value as needed */
+            bottom: 7px; /* Change this value as needed */
+            position: absolute;
+            z-index: 3;
+            cursor: pointer;
+            transition: transform 0.3s ease; /* Add transition for smooth animation */
+        }
+
+        .zoom-in {
+            transform: scale(1.2); /* Adjust scale factor as needed */
+        }
+
+        h3 {
+            margin-left: 735px;
+            font-size: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: -80px;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .recycle {
+            height: 75px; /* Adjust height as needed */
+            width: 75px;  /* Adjust width as needed */
+            position: absolute;
+            top: 10px; /* Adjust top position as needed */
+            right: 1410px;  /* Adjust right position as needed */
+            z-index: 4; /* Ensure it's above other elements */
+        }
+
+        .start {
+            position: absolute;
+            top: -650px; /* Initially hidden above the viewport, adjusted to -650px */
+            left: 50%;
+            transform: translateX(-50%);
+            height: 620px;
+            width: 570px;
+            transition: top 0.5s ease; /* Smooth sliding effect */
+            
+        }
+
+        .start.show {
+            top: 5%; /* Slide to the center */
+        }
+
+        .taskbarright {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 38px; /* Adjust the height as needed */
+            z-index: 2;
+        }
+
+        .chrome {
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            bottom: 3px; /* Position near the bottom */
+            left: 760px; /* Adjust the left position as needed */
+            z-index: 3;
+        }
+
+        .internet1 {
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            bottom: 3px; /* Position near the bottom */
+            left: 695px; /* Adjust the left position as needed */
+            z-index: 3;
+        }
+
+        .vs {
+            height: 36px;
+            width: 60px;
+            position: absolute;
+            bottom: 3px; /* Position near the bottom */
+            left: 810px; /* Adjust the left position as needed */
+            z-index: 3;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <img class="image2" src="img1.png" alt="another img">
+
+    <!-- <img src="recyclebinicon.png" alt="recycle bin icon" class="recycle"> -->
+
+    <img src="startmenu.PNG" alt="" class="start">
+
+    <div class="textbar"></div>
+
+    <img src="taskbarright.PNG" alt="an img" class="taskbarright">
+
+    <a href="https://google.com"><img src="chrome2.png" alt="an img" class="chrome"></a>
+
+    <img src="vs.png" alt="aan img" class="vs">
+
+    <a href="https://edexcloud.com"><img src="internet1.png" alt="1an img" class="internet1"></a>
+
+    <script>
+        document.querySelector('.image2').addEventListener('click', function() {
+            this.classList.add('zoom-in');
+            setTimeout(() => {
+                this.classList.remove('zoom-in');
+            }, 200); // Adjust the timeout duration as needed (200ms in this case)
+
+            const startMenu = document.querySelector('.start');
+            startMenu.classList.toggle('show'); // Toggle the 'show' class to slide the menu
+        });
+
+        // setTimeout(function(){
+        //     document.querySelector(".internet1").style.display = "none";
+        // }, 2000)
+    </script>
+</body>
+</html>
